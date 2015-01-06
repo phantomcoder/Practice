@@ -147,6 +147,26 @@ public class LinkedListClass<E>
 		n.nextNode = tempNode.nextNode;
 		
 	}
+	//* This will always returns false, because, the way we are constructing the linked list, we will never have 
+	// loops.
+	//
+	
+	public boolean detectIfLoopExists()
+	{
+		boolean foundLoop = false;
+		
+		Node<E> slowRunner = head, fastRunner = head;
+		
+		while(fastRunner != null && fastRunner.nextNode !=null)
+		{
+			slowRunner = slowRunner.nextNode;
+			fastRunner = fastRunner.nextNode.nextNode;
+			if(slowRunner == fastRunner)
+				foundLoop = true;
+		}
+		
+		return foundLoop;
+	}
 	
 	public E getMiddle()
 	{
