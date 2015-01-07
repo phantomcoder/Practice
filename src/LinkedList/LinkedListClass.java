@@ -1,5 +1,7 @@
 package LinkedList;
 
+import java.util.Hashtable;
+
 public class LinkedListClass<E>
 {
 	Node<E> head;
@@ -178,6 +180,51 @@ public class LinkedListClass<E>
 			fastRunner = fastRunner.nextNode.nextNode;
 		}
 		return slowRunner.data;
+	}
+	
+	public Node removeDuplicates()
+    {
+		Node previousNode = null;
+		Node headNode = head;
+		Hashtable<Integer, Boolean> kv = new Hashtable<>();
+		while(headNode!=null)
+       {
+    	  // d = n.data;
+			if(kv.containsKey((headNode.data)))
+			{
+			   previousNode.nextNode = headNode.nextNode;
+			   
+			}else 
+			{				
+				   kv.put((Integer) headNode.data, true);
+				   previousNode = headNode;
+				
+				
+			}
+			headNode= headNode.nextNode;
+    	   
+       }
+    	
+      return head;
+    }
+	
+	
+	public void pairwiseSwap()
+	{
+		Node tempNode = head;
+		
+		while(tempNode!=null && tempNode.nextNode!=null)
+		{
+			swap(tempNode,tempNode.nextNode);
+			tempNode = tempNode.nextNode.nextNode;
+		}
+	}
+	
+	private void  swap(Node a, Node b)
+	{
+		Object temp = b.data;
+		b.data = a.data;
+		a.data=temp;
 	}
 	
 	public String toString()

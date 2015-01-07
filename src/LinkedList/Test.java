@@ -13,7 +13,7 @@ public class Test {
 		newLinkedList.add(3);
 		newLinkedList.add(4);
 		newLinkedList.add(5);
-		newLinkedList.add(2);
+		newLinkedList.add(6);
 		
 		//newLinkedList.addAt(4, 2);
 
@@ -23,8 +23,8 @@ public class Test {
 		//System.out.println(newLinkedList.getNthFromLast(2).data);
 		//System.out.println(newLinkedList.getCountOfOccurences(5));
 		//newLinkedList.remove(1);
-		
-		System.out.println(newLinkedList.detectIfLoopExists());
+		newLinkedList.pairwiseSwap();
+		System.out.println(newLinkedList.toString());
 		
 	}
 	
