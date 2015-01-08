@@ -198,8 +198,6 @@ public class LinkedListClass<E>
 			{				
 				   kv.put((Integer) headNode.data, true);
 				   previousNode = headNode;
-				
-				
 			}
 			headNode= headNode.nextNode;
     	   
@@ -227,6 +225,60 @@ public class LinkedListClass<E>
 		a.data=temp;
 	}
 	
+	public void moveLastElementToFront()
+	{
+		
+		Node tempNode = new Node<E>(move(head));
+		tempNode.nextNode = head;
+		head = tempNode;
+	}
+	
+	private E move(Node a)
+	{
+		while(a.nextNode.nextNode !=null)
+		{
+			a = a.nextNode; 
+		}
+		E e = (E) a.nextNode.data;
+		a.nextNode = null;
+		return e;
+	}
+	
+	public void deleteAlternateNodes()
+	{
+		Node prev = head;
+		Node n = head.nextNode; 
+		
+		while(prev != null && n != null)
+		{
+			prev.nextNode = n.nextNode;
+			
+			prev = prev.nextNode;
+			
+			if(prev != null)
+				n = prev.nextNode;
+		}
+	}
+	/*
+	
+	public void splitListIntoTwoWithAlternate()
+	{
+		Node prev = head;
+		Node n = head.nextNode; 
+		
+		LinkedListClass 
+		
+		while(prev != null && n != null)
+		{
+			prev.nextNode = n.nextNode;
+			
+			prev = prev.nextNode;
+			
+			if(prev != null)
+				n = prev.nextNode;
+		}
+	}
+	*/
 	public String toString()
 	{
 		StringBuilder s = new StringBuilder();
