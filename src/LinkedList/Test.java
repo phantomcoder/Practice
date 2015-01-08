@@ -14,8 +14,8 @@ public class Test {
 		newLinkedList.add(2);
 		newLinkedList.add(3);
 		newLinkedList.add(4);
-		//newLinkedList.add(5);
-		//newLinkedList.add(6);
+		newLinkedList.add(5);
+		newLinkedList.add(6);
 		
 	
 		//newLinkedList.addAt(4, 2);
@@ -31,9 +31,9 @@ public class Test {
 
 		System.out.println(newLinkedList.toString());
 		
-		newLinkedList.deleteAlternateNodes();
-		
-		System.out.println(newLinkedList.toString());
+		//newLinkedList.deleteAlternateNodes();
+		newLinkedList.splitListIntoTwoWithAlternate();
+		//System.out.println(newLinkedList.toString());
 		
 		//getIntersection(newLinkedList, newLinkedList2);
 	}

@@ -259,26 +259,32 @@ public class LinkedListClass<E>
 				n = prev.nextNode;
 		}
 	}
-	/*
+
 	
 	public void splitListIntoTwoWithAlternate()
 	{
-		Node prev = head;
-		Node n = head.nextNode; 
+		Node originalHead = head;
 		
-		LinkedListClass 
+		Node head1 = new Node(head.data), head2 = new Node(head.nextNode.data);
 		
-		while(prev != null && n != null)
+		Node end1 = head1, end2 = head2;
+		
+		originalHead = originalHead.nextNode.nextNode;
+		
+		while(originalHead != null && originalHead.nextNode != null )
 		{
-			prev.nextNode = n.nextNode;
+			end1.nextNode = new Node(originalHead.data);
+			end1 = end1.nextNode;
+			end2.nextNode = new Node(originalHead.nextNode.data);
+			end2 = end2.nextNode;
 			
-			prev = prev.nextNode;
-			
-			if(prev != null)
-				n = prev.nextNode;
+			originalHead = originalHead.nextNode.nextNode;
 		}
+		
+		System.out.println(head1.toString());
+		System.out.println(head2.toString());
 	}
-	*/
+
 	public String toString()
 	{
 		StringBuilder s = new StringBuilder();
@@ -314,6 +320,16 @@ class Node<E>
 		  this.data = value;
 		  this.nextNode = null;
 	  }
+	 
+	  public String toString()
+	     {
+
+	         String result = data + "->";
+	         if (nextNode != null){
+	             result += nextNode.toString();
+	         }
+	         return  result;
+	     }
   }
 
 }
