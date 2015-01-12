@@ -9,11 +9,8 @@ public class DeleteBinaryTree {
 		root.right = new Node<Integer>(6);
 		
 		inOrderTraversal(root);
-		delete(root);
-		
+		delete(root);		
 		inOrderTraversal(root);
-		
-
 	}
 	
 		public static void delete(Node t)
