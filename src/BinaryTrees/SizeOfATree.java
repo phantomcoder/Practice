@@ -78,14 +78,6 @@ public class SizeOfATree {
 		public static int size(Node n)
 		{
 			int count = 0;
-			
-			/*
-			while(n != null)
-			{
-				count = size(n.leftChild) + 1 + size(n.rightChild);
-				return count;
-			}
-			*/
 			if(n == null)
 				return 0;
 			else 
