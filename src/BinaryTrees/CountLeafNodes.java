@@ -1,12 +1,33 @@
 package BinaryTrees;
 
-import BinaryTrees.PrintAllRootsToLeafPath.Node;
-
 public class CountLeafNodes {
 
 	public static void main(String[] args) 
 	{
+		BinaryTree s = new BinaryTree();
+		s.addTreeNode(10);
+		s.addTreeNode(8);
+		s.addTreeNode(14);
+		s.addTreeNode(7);
+		s.addTreeNode(9);
+		s.addTreeNode(13);
+		s.addTreeNode(15);
+		s.addTreeNode(12);
 	
+		System.out.println(countLeafNodes(s.root));
+	}
+	
+	public static int countLeafNodes(Node n)
+	{
+		if(n == null)
+			return 0;
+		
+		if((n.leftChild == null) && (n.rightChild == null))
+		    return 1;
+		else
+
+		{	return countLeafNodes(n.leftChild)+countLeafNodes(n.rightChild);}
+
 	}
 
 static class BinaryTree
@@ -34,7 +55,7 @@ static class BinaryTree
 				while(true)
 				{
 					parentNode = focusNode;
-				if(value < root.value)
+				if(value < focusNode.value)
 				{
 					focusNode = focusNode.leftChild;
 					if(focusNode == null)

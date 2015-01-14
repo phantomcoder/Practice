@@ -25,7 +25,7 @@ public class BinaryTree<E>
 			while(true)
 			{
 				parentNode = focusNode;
-			if(value < root.data)
+			if(value < focusNode.data)
 			{
 				focusNode = focusNode.leftChild;
 				if(focusNode == null)

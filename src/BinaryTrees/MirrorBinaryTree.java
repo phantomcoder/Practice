@@ -69,7 +69,7 @@ public class MirrorBinaryTree {
 				while(true)
 				{
 					parentNode = focusNode;
-				if(value < root.value)
+				if(value <  focusNode.value)
 				{
 					focusNode = focusNode.leftChild;
 					if(focusNode == null)
