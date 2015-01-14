@@ -1,8 +1,5 @@
 package BinaryTrees;
 
-import javax.swing.RootPaneContainer;
-import javax.xml.crypto.dsig.keyinfo.RetrievalMethod;
-
 public class CheckIfTreeAreSame {
 
 	// Checks to see if the given two trees are similar.
@@ -25,8 +22,6 @@ public class CheckIfTreeAreSame {
 		newTree1.add(7);
 
 		System.out.println("Are the trees same?" + isSame(newTree.root, newTree1.root));
-		
-		
 
 	}
 	

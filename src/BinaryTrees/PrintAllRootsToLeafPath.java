@@ -1,7 +1,7 @@
 package BinaryTrees;
 
-public class MirrorBinaryTree {
-
+public class PrintAllRootsToLeafPath 
+{
 	public static void main(String[] args) 
 	{
 		BinaryTree newTree = new BinaryTree();
@@ -11,29 +11,47 @@ public class MirrorBinaryTree {
 		newTree.addTreeNode(3);
 		newTree.addTreeNode(1);
 		newTree.addTreeNode(7);
+		newTree.addTreeNode(10);
 		
-		inOrderTraversal(newTree.root);
-		mirror(newTree.root);
-		inOrderTraversal(newTree.root);
+		printAllPaths(newTree.root);
 		
 	}
 	
-	public static void mirror(Node n)
+
+	public static void printAllPaths(Node n)
 	{
-		if(n == null)
-			return;
+		int[] path = new int[1000];
+		printPaths(n, path, 0);
+	}
+	
+	
+	
+	public static void printPaths(Node n, int[] paths, int len)
+	{
+		if(n == null) return;
 		
+		paths[len] = n.value;
+		len++;
+		
+		if((n.leftChild ==null) && n.rightChild ==null)
+		{
+			printArray(paths, len);
+		}
 		else
 		{
-			mirror(n.leftChild);
-			mirror(n.rightChild);
-			
-			Node  temp = n.leftChild;
-			n.leftChild = n.rightChild;
-			n.rightChild = temp;
+			printPaths(n.leftChild, paths, len);
+			printPaths(n.rightChild, paths, len);
 		}
 		
 	}
+	
+	private static void printArray(int[] ints, int len) { 
+		  int i; 
+		  for (i=0; i<len; i++) { 
+		   System.out.print(ints[i] + " "); 
+		  } 
+		  System.out.println(); 
+		} 
 	
 	public static void inOrderTraversal(Node n)
 	{
@@ -46,6 +64,7 @@ public class MirrorBinaryTree {
 	}
 	
 	static class BinaryTree
+	
 	{
 	   Node root;
 	   

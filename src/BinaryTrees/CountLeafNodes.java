@@ -1,51 +1,16 @@
 package BinaryTrees;
 
-public class MirrorBinaryTree {
+import BinaryTrees.PrintAllRootsToLeafPath.Node;
+
+public class CountLeafNodes {
 
 	public static void main(String[] args) 
 	{
-		BinaryTree newTree = new BinaryTree();
-		newTree.addTreeNode(9);
-		newTree.addTreeNode(4);
-		newTree.addTreeNode(6);
-		newTree.addTreeNode(3);
-		newTree.addTreeNode(1);
-		newTree.addTreeNode(7);
-		
-		inOrderTraversal(newTree.root);
-		mirror(newTree.root);
-		inOrderTraversal(newTree.root);
-		
-	}
 	
-	public static void mirror(Node n)
-	{
-		if(n == null)
-			return;
-		
-		else
-		{
-			mirror(n.leftChild);
-			mirror(n.rightChild);
-			
-			Node  temp = n.leftChild;
-			n.leftChild = n.rightChild;
-			n.rightChild = temp;
-		}
-		
 	}
+
+static class BinaryTree
 	
-	public static void inOrderTraversal(Node n)
-	{
-		if(n != null)
-		{
-			inOrderTraversal(n.leftChild);
-			System.out.println(n.value);
-			inOrderTraversal(n.rightChild);
-		}
-	}
-	
-	static class BinaryTree
 	{
 	   Node root;
 	   
