@@ -15,9 +15,7 @@ public class LevelOrderInSpiral {
 		s.add(13);
 		s.add(15);
 		s.add(12);
-		
-		inOrderTraversal(s.root);
-		System.out.println("*****");
+
 		printLevelOrderInSpiral(s.root);
 		
 	}
