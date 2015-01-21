@@ -16,8 +16,13 @@ public class InOrderTraversalNoRecursion
 		newTree.add(10);
 		newTree.add(1);
 		newTree.add(7);
+		newTree.add(14);
+		newTree.add(12);
+		newTree.add(16);
 		
-		inOrderTraversal(newTree.root);
+		//inOrderTraversal(newTree.root);
+		System.out.println("****");
+		inOrderTraversalNoRecursion(newTree.root);
 	}
 	
 	public static void inOrderTraversal(Node n)
@@ -34,9 +39,33 @@ public class InOrderTraversalNoRecursion
 	{
 		Stack<Node> s = new Stack<Node>();
 		Node temp = n;
+		s.push(temp);
 		while(true)
 		{
-					
+		    if(temp != null )
+		    {
+		    	if(temp.leftChild != null)
+		    	{
+		    	s.push(temp.leftChild);
+		    	}
+		    	temp = temp.leftChild;
+		    }
+		    else
+		    {
+		    	if(!s.isEmpty())
+		    	{
+		    	temp = s.pop();
+		    	System.out.println(temp.value);
+		    	temp = temp.rightChild;
+		    	if(temp != null)
+		    	{
+		    		s.push(temp);
+		    	}
+		    	}
+		    	else 
+		    		return;
+		    }
+		    
 		}
 	}
 
