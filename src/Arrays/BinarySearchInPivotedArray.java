@@ -8,8 +8,7 @@ public class BinarySearchInPivotedArray {
 	   
 	  System.out.println(findPivotPoint(input, 0, input.length));
 	  System.out.println(pivotedBinarySearch(input, 0, input.length, 3));
-	   
-	   
+	  
 	}
 
 	private static int pivotedBinarySearch(int[] a, int low, int high, int number)
@@ -26,8 +25,6 @@ public class BinarySearchInPivotedArray {
 		else return binarySearchInArray(a, pivot, high, number);
 	}
 
-	
-	
 	private static int binarySearchInArray(int[] a, int low, int high, int number)
 	 {
 		 if(high <low) return -1;
