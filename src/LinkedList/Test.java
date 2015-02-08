@@ -25,14 +25,14 @@ public class Test {
 		//System.out.println(newLinkedList.getMiddle());
 		//System.out.println(newLinkedList.getNthFromLast(2).data);
 		//System.out.println(newLinkedList.getCountOfOccurences(5));
-		//newLinkedList.remove(1);
+		newLinkedList.remove(1);
 		//newLinkedList.pairwiseSwap();
 		//newLinkedList.moveLastElementToFront();
 
 		System.out.println(newLinkedList.toString());
 		
 		//newLinkedList.deleteAlternateNodes();
-		newLinkedList.splitListIntoTwoWithAlternate();
+		//newLinkedList.splitListIntoTwoWithAlternate();
 		//System.out.println(newLinkedList.toString());
 		
 		//getIntersection(newLinkedList, newLinkedList2);

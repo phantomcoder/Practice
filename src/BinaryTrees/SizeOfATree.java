@@ -3,10 +3,6 @@
  */
 package BinaryTrees;
 
-/**
- * @author rthummal
- *
- */
 public class SizeOfATree {
 
 	/**
