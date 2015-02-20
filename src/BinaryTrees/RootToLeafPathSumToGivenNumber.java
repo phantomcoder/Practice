@@ -14,7 +14,6 @@ public class RootToLeafPathSumToGivenNumber {
 		newTree.addTreeNode(7);
 		newTree.addTreeNode(10);
 		
-		//inOrderTraversal(newTree.root);
 		System.out.println(rootToLeafPathExists(newTree.root, 19));
 		
 	
