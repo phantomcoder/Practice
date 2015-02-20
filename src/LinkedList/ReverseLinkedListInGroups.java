@@ -4,66 +4,42 @@ public class ReverseLinkedListInGroups {
 
 	public static void main(String[] args) 
 	{
-		LinkedListClass<Integer> newLinkedList = new LinkedListClass<Integer>();
-		newLinkedList.add(1);
-		newLinkedList.add(2);
-		newLinkedList.add(3);
-		newLinkedList.add(4);
-		newLinkedList.add(5);
-		newLinkedList.add(6);
+		Node<Integer> n1 = new Node<Integer>(5,null);
+		Node<Integer> n2 = new Node<Integer>(4,n1);
+		Node<Integer> n3 = new Node<Integer>(3,n2);
+		Node<Integer> n4 = new Node<Integer>(2,n3);
+		Node<Integer> n5 = new Node<Integer>(1, n4);
+		Node<Integer> n6 = new Node<Integer>(0, n5);
 		
-		System.out.println(newLinkedList.head.toString());
-		System.out.println(reverseInGroups(newLinkedList,3).toString());
-
+		System.out.println(n6.toString());
+		System.out.println("After reversal");
+		System.out.println(reverseInGroups(n6, 3).toString());
 	}
 	
-    private static LinkedListClass.Node reverseInGroups(LinkedListClass newLinkedList,int n)
-    {
-    	LinkedListClass.Node current = newLinkedList.head;
-    	LinkedListClass.Node previous = null;
-    	LinkedListClass.Node next = current.nextNode;
-    	int count = 0;
-    	
-    	while(next != null && count < n)
-    	{
-    		current.nextNode = previous;
-    		previous = current;
-    		current = next;
-    		next = next.nextNode;
-    		count++;
-    	}
-    	newLinkedList.head = current;
-    	newLinkedList.head.nextNode = previous;
-    	
-    	return newLinkedList.head;
-    }
-	
-    static class LinkedList<E>
+	private static Node<Integer> reverseInGroups(Node<Integer> headNode, int size)
 	{
-		Node<E> head;
+		Node givenHead = headNode;
+		int count = 0;
+		Node prev = null;
+		Node current = givenHead; Node next = null;
 		
-		public LinkedList()
+		while(current != null && count < size)
 		{
-			head = new Node<E>(null, null);
+		   next = current.nextNode;
+		   current.nextNode = prev;
+		   prev = current;
+		   current = next;
+		   
+		   count++;
+			
 		}
 		
-		public void add(E data)
+		if(next != null)
 		{
-			if(head.data == null)
-			{
-				head.data = data;
-			}
-			else
-			{
-				Node runner = head;
-				
-				while(runner.nextNode != null)
-				{
-					runner = runner.nextNode;
-				}
-				runner.nextNode = new Node<E>(data, null);
-			}
+			givenHead.nextNode = reverseInGroups(next, size);
 		}
+		return prev;
+		
 	}
 	
 	static class Node<E>
