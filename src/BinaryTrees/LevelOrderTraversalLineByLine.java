@@ -18,8 +18,7 @@ public class LevelOrderTraversalLineByLine {
           tree.addTreeNode(5);
           
           levelOrderLineByLine(tree.root);
-          
-          
+      
 	}
 	
 	
@@ -47,14 +46,11 @@ public class LevelOrderTraversalLineByLine {
 			System.out.println();
 			currentLevel = nextLevel;
             nextLevel = new LinkedList<Node>();
-
 			
 		}
-		
-		
+	
 	}
-	
-	
+
 	static class BinaryTree
 	{
 		Node root;
