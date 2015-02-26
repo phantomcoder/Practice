@@ -8,7 +8,7 @@ public class CoinChangeProblem {
 	 */
 	public static void main(String[] args) {
 		
-		int[] denoms = {5,25,50};
+		int[] denoms = {5,25};
 		int target = 75;
 		CoinChangeAnswer answer = findAllPossibleCombinations(target, denoms);
 		
