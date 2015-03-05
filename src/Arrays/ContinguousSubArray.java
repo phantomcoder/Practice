@@ -5,7 +5,7 @@ public class ContinguousSubArray {
 	public static void main(String[] args) 
 	{
 	
-		int[] input = new int[]{-2,1,-3,4,-1,2,1,-5,4};
+		int[] input = new int[]{1,-2,-3,4,5,7,-6};
 		System.out.println(maxSubArray(input));
 	}
 	
@@ -17,7 +17,9 @@ public class ContinguousSubArray {
 	        for(int i=1; i< A.length;i++)
 	        {
 	            maxsum = Math.max(maxsum+A[i],A[i]);
+	            
 	            max = Math.max(max,maxsum);
+	        
 	        }
 	        return max;
 	        
