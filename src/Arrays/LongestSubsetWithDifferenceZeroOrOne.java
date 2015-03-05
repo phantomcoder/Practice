@@ -1,5 +1,8 @@
 package Arrays;
 
+/*
+ * Print subset where the difference between max and min number is either 0 or 1
+ */
 public class LongestSubsetWithDifferenceZeroOrOne {
 
 	public static void main(String[] args) 
