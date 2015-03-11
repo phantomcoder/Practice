@@ -8,7 +8,8 @@ public class LongestSubsetWithDifferenceZeroOrOne {
 	public static void main(String[] args) 
 	{
 	
-		   int[] input = {2,6,7,9,1,0,1,0,2,3,6};
+		   int[] input = {1, 5, 6, 6, 6, 7, 7, 9};
+			   //{2,6,7,9,1,0,1,0,2,3,6};
 		    
 		    printSubset(input);
 		    }
