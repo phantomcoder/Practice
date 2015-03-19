@@ -12,8 +12,11 @@ public class ReverseSentenceInConstantSpace {
 	
 	private static void reverseSentenceInPlace(String givenString)
 	{
-	
-		StringBuffer s = new StringBuffer(givenString);
+
+		for(int i = 0; i < givenString.length(); i++)
+		{
+			
+		}
 	}
 
 }
