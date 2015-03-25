@@ -100,8 +100,7 @@ public class RootToLeafPathSumToGivenNumber {
 		}
 	}
 	
-	static 
-	class Node
+	static class Node
 	{
 		Node leftChild;
 		Node rightChild;
