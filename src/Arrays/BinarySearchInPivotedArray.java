@@ -6,7 +6,7 @@ public class BinarySearchInPivotedArray {
 	{
 	   int[] input = {3,4,1,2,3};
 	   
- System.out.println(findPivotPoint(input, 0, input.length));
+	System.out.println(findPivotPoint(input, 0, input.length));
 	System.out.println(pivotedBinarySearch(input, 0, input.length, 3));
 	}
 
